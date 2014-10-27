@@ -46,3 +46,7 @@ Pro jednotlivé šablony je třeba přidat následující řetězce:
 *JavaScript Template*
   
     #{ico}<br/>#{dic}<br/>
+
+## LICENSE
+
+    Open Software License (OSL 3.0) 
