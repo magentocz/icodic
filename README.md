@@ -15,7 +15,7 @@ Modul IČ a DIČ:
 
 Po instalaci se v v backeend modul projeví tak, že profil zákazníka v _Zákazníci → Správa zákazníků → → Adresy → Přidat novou adresu/Upravit zákaznické adresy_ obsahuje navíc položku Ič a Dič.
 
-Pro nastavení ve frontendu je nutná změna šablon. Položky Ič a Dič se potom objeví v profilu zákazníka a tektéž budou zobrazeny při zadávání adresy při procesu dokončení objednávky - jsou tedy dostupné i v příapadě povolení nákupu pro nepřihlášené zákazníky.
+Pro nastavení ve frontendu je nutná změna šablon. Položky IČ a DIČ se objeví v profilu zákazníka a taktéž budou zobrazeny při zadávání adresy při procesu dokončení objednávky - jsou tedy dostupné i v případě povolení nákupu pro nepřihlášené zákazníky.
 
 ## Nastavení pouze pro Magento 1.4.2 a vyšší
 
