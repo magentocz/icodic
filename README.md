@@ -151,6 +151,10 @@ nahradit
 
   <br />IČO: #{var magentocz_ico}, <br />DIČ: #{var magentocz_dic}
 
+## Testováno na
+
+ - Magento CE 1.9.0.1
+
 # LICENCE
 
     Open Software License (OSL 3.0)
