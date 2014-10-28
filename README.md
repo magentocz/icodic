@@ -31,11 +31,11 @@ Pro správnou fakturaci, která je nezbytnou součástí internetového obchodov
 
  - IČO a DIČ je zobrazeno ve fakturační adrese emailu potvrzující objednávku
 
-### Můj Účet > Zobrazení výchozí fakturační a dodací adresy
+### Frontend > Můj Účet > Zobrazení výchozí fakturační a dodací adresy
 
  - IČO a DIČ je zobrazeno v adrese, pokud je vyplněno
 
-### Můj Účet > Přidání adresy, Editace adresy
+### Frontend > Můj Účet > Přidání adresy, Editace adresy
 
  - IČO a DIČ lze nastavit pro každou zákazníkovu adresu
 
