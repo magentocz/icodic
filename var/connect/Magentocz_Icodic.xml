@@ -1,16 +1,20 @@
 <_>
-   <form_key>HoPm0Mqx1yq4AvxK</form_key>
+   <form_key>aJs6NUV2nJNGMHj1</form_key>
    <name>Magentocz_Icodic</name>
    <channel>community</channel>
    <version_ids>
       <version_ids>2</version_ids>
    </version_ids>
-   <summary>Magento CZ Icodic Module</summary>
-   <description>Magento CZ Icodic Module</description>
+   <summary>Podpora IČ a DIČ zákazníka pro Magento.</summary>
+   <description>Podpora IČ a DIČ zákazníka pro Magento.
+ - available on github https://github.com/magentocz/icodic
+
+Support:
+ - https://github.com/magentocz/icodic/issues</description>
    <license>OSL v3</license>
    <license_uri>http://www.opensource.org/licenses/osl-3.0.php</license_uri>
    <version>1.0.0.0</version>
-   <stability>beta</stability>
+   <stability>stable</stability>
    <notes>Verze modulu otestována na Magento CE 1.9</notes>
    <authors>
       <name>
@@ -20,7 +24,7 @@
          <user>jaromirmuller</user>
       </user>
       <email>
-         <email>magentocz@gmail.com</email>
+         <email>jaromir.muller@getready.cz</email>
       </email>
    </authors>
    <depends_php_min>5.2.0.0</depends_php_min>
@@ -40,7 +44,7 @@
             <max/>
          </max>
          <files>
-            <files>         </files>
+            <files>            </files>
          </files>
       </package>
       <extension>

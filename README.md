@@ -157,6 +157,13 @@ nahradit
 
  - Magento CE 1.9.0.1
 
+Na verzích nižších než 1.9.0.1 nebylo zatím testováno, na 99% bude fungovat ve verzích 1.8, 1.7. bez problémů.
+
+## Podpora
+
+Veškeré dotazy a hlášení chyb směřujte na https://github.com/magentocz/icodic/issues
+
+
 # LICENCE
 
     Open Software License (OSL 3.0)
