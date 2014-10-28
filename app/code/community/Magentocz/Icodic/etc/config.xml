@@ -25,22 +25,27 @@
         </Magentocz_Icodic>
     </modules>
 
+    <admin>
+        <fieldsets>
+            <customer_dataflow>
+                <magentocz_ico>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <mapped>1</mapped>
+                </magentocz_ico>
+                <magentocz_dic>
+                    <billing>1</billing>
+                    <shipping>1</shipping>
+                    <mapped>1</mapped>
+                </magentocz_dic>
+            </customer_dataflow>
+        </fieldsets>
+    </admin>
     <global>
     	<models>
 			<magentocz_icodic>
 		        <class>Magentocz_Icodic_Model</class>
 			</magentocz_icodic>
-			<customer>
-                <!-- <rewrite>
-					<address>Magentocz_Icodic_Model_Customer_Address</address>
-				</rewrite> -->
-            </customer>
-			<sales>
-				<!-- <rewrite>
-					<order_address>Magentocz_Icodic_Model_Sales_Order_Address</order_address>
-					<quote_address>Magentocz_Icodic_Model_Sales_Quote_Address</quote_address>
-				</rewrite> -->
-			</sales>
 		</models>
 		<helpers>
             <magentocz_icodic>
@@ -74,31 +79,55 @@
             </magentocz_icodic> 
 		</blocks>
         <fieldsets>
+            
             <sales_copy_order_billing_address>                
-                <ico><to_order>*</to_order></ico>
-                <dic><to_order>*</to_order></dic>
+                <magentocz_ico>
+                    <to_order>*</to_order>
+                </magentocz_ico>
+                <magentocz_dic>
+                    <to_order>*</to_order>
+                </magentocz_dic>
             </sales_copy_order_billing_address>
+
             <sales_copy_order_shipping_address>
-                <ico><to_order>*</to_order></ico>
-                <dic><to_order>*</to_order></dic>
+                <magentocz_ico>
+                    <to_order>*</to_order>
+                </magentocz_ico>
+                <magentocz_dic>
+                    <to_order>*</to_order>
+                </magentocz_dic>
             </sales_copy_order_shipping_address>
-            <sales_convert_quote>
-                <ico><to_order>*</to_order></ico>
-                <dic><to_order>*</to_order></dic>
-            </sales_convert_quote>   
+ 
             <sales_convert_quote_address>
-				<ico><to_order_address>*</to_order_address><to_customer_address>*</to_customer_address></ico>
-                <dic><to_order_address>*</to_order_address><to_customer_address>*</to_customer_address></dic>
+                <magentocz_ico>
+                    <to_order_address>*</to_order_address>
+                    <to_customer_address>*</to_customer_address>
+                </magentocz_ico>
+                <magentocz_dic>
+                    <to_order_address>*</to_order_address>
+                    <to_customer_address>*</to_customer_address>
+                </magentocz_dic>
             </sales_convert_quote_address>
+
             <sales_convert_order_address>
-            	<ico><to_quote_address>*</to_quote_address></ico>
-                <dic><to_quote_address>*</to_quote_address></dic>
+                <magentocz_ico>
+                    <to_quote_address>*</to_quote_address>
+                </magentocz_ico>
+                <magentocz_dic>
+                    <to_quote_address>*</to_quote_address>
+                </magentocz_dic>
             </sales_convert_order_address>
+            
             <customer_address>
-                <ico><to_quote_address>*</to_quote_address></ico>
-                <dic><to_quote_address>*</to_quote_address></dic>
+                <magentocz_ico>
+                    <to_quote_address>*</to_quote_address>
+                </magentocz_ico>
+                <magentocz_dic>
+                    <to_quote_address>*</to_quote_address>
+                </magentocz_dic>
             </customer_address>
-    	</fieldsets>
+            
+        </fieldsets>
     </global>
 
     <adminhtml>
@@ -148,8 +177,8 @@
     <default>
         <onestepcheckout>
             <sortordering_fields>
-                <ico>20</ico>
-                <dic>21</dic>
+                <magentocz_ico>20</magentocz_ico>
+                <magentocz_dic>21</magentocz_dic>
             </sortordering_fields>
         </onestepcheckout>    
     </default>
