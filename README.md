@@ -163,7 +163,6 @@ Na verzích nižších než 1.9.0.1 nebylo zatím testováno, na 99% bude fungov
 
 Veškeré dotazy a hlášení chyb směřujte na https://github.com/magentocz/icodic/issues
 
-
 # LICENCE
 
     Open Software License (OSL 3.0)
@@ -184,3 +183,6 @@ Veškeré dotazy a hlášení chyb směřujte na https://github.com/magentocz/ic
     * @copyright Copyright (c) 2014 Magento CZ (http://www.magento.cz)
     *
     */
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-54971165-2/magentocz/icodic/README?pixel)](https://github.com/igrigorik/ga-beacon)
