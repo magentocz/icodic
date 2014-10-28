@@ -1,9 +1,9 @@
 Magento modul IČO a DIČ
 ====================
 
-Magento modul řeší IČ a DIČ zákazníka.
+Podpora IČ a DIČ zákazníka pro Magento.
 
-Pro správnou fakturaci, která je nezbytnou součástí internetového obchodování, je třeba do adresy zákazníka zanést IČ a DIČ. Základní instalace Magento má k dispozici pouze 'Tax/VAT number' atribut (ve verzi Magento CE 1.9)
+Pro správnou fakturaci, která je nezbytnou součástí internetového obchodování, je třeba do adresy zákazníka zanést IČ a DIČ. Základní instalace Magento má k dispozici pouze 'Tax/VAT number' atribut (ve verzi Magento CE 1.9).
 
 ## Seznam funkcí
 
@@ -15,7 +15,7 @@ Pro správnou fakturaci, která je nezbytnou součástí internetového obchodov
 ### Backend > Sales > Orders
 
  - lze vytvořit novou objednávku a ve fakturační adrese lze vyplnit IČO a DIČ
- - v zobrazení existující objednávky je zobrazeno IČO a DIČ pokud byla zadana
+ - v zobrazení existující objednávky je zobrazeno IČO a DIČ pokud byla čísla zadána
 
 ### Backend > Tisk PDF faktury
 
@@ -24,10 +24,10 @@ Pro správnou fakturaci, která je nezbytnou součástí internetového obchodov
 ### Frontend > Pokladna > Fakturační adresa
 
  - IČO a DIČ jsou zobrazeny ve fakturační adrese a lze je editovat
- - IČO a DIČ jsou uloženy či aktualizovány při přechodu na další krok checkoutu
+ - IČO a DIČ jsou uloženy či aktualizovány při přechodu na další krok pokladny
  - IČO a DIČ jsou zobrazeny v progress baru (pravý sloupec)
 
-### Frontend > Objednavkový email 
+### Frontend > Objednávkový email 
 
  - IČO a DIČ je zobrazeno ve fakturační adrese emailu potvrzující objednávku
 
@@ -44,37 +44,39 @@ Pro správnou fakturaci, která je nezbytnou součástí internetového obchodov
 
 ### Upravit frontend šablony
 
-#### Checkout > Billing Information
+#### Frontend > Pokladna > Fakturačí adresa
 
 V základní instalaci Magenta bude potřeba upravit jednu z šablon:
+
  - app/desing/frontend/rwd/default/template/persistent/checkout/onepage/billing.phtml
  - app/desing/frontend/rwd/default/template/checkout/onepage/billing.phtml
  - app/desing/frontend/base/default/template/persistent/checkout/onepage/billing.phtml
  - app/desing/frontend/base/default/template/checkout/onepage/billing.phtml
 
-Do šablony je potřeba přidat nová políčka:
+Do šablony je potřeba přidat nová textová pole:
 
     <?php // Magento CZ uprava ?>
-            <li class="fields">
-               <div class="field">
-                  <label for="billing:magentocz_ico"><?php echo $this->__('IČO') ?></label>
-                  <div class="input-box">
-                     <input type="text" id="billing:magentocz_ico" name="billing[magentocz_ico]" value="<?php echo $this->htmlEscape($this->getAddress()->getMagentoczIco()) ?>" title="<?php echo $this->__('IČO') ?>" class="input-text" />
-                  </div>
-               </div>
-               <div class="field">
-                  <label for="billing:magentocz_dic"><?php echo $this->__('DIČ') ?></label>
-                  <div class="input-box">
-                  <input type="text" id="billing:magentocz_dic" name="billing[magentocz_dic]" value="<?php echo $this->htmlEscape($this->getAddress()->getMagentoczDic()) ?>" title="<?php echo $this->__('DIČ') ?>" class="input-text" />
-                  </div>
-               </div>
-            </li>
+    <li class="fields">
+       <div class="field">
+          <label for="billing:magentocz_ico"><?php echo $this->__('IČO') ?></label>
+          <div class="input-box">
+             <input type="text" id="billing:magentocz_ico" name="billing[magentocz_ico]" value="<?php echo $this->htmlEscape($this->getAddress()->getMagentoczIco()) ?>" title="<?php echo $this->__('IČO') ?>" class="input-text" />
+          </div>
+       </div>
+       <div class="field">
+          <label for="billing:magentocz_dic"><?php echo $this->__('DIČ') ?></label>
+          <div class="input-box">
+          <input type="text" id="billing:magentocz_dic" name="billing[magentocz_dic]" value="<?php echo $this->htmlEscape($this->getAddress()->getMagentoczDic()) ?>" title="<?php echo $this->__('DIČ') ?>" class="input-text" />
+          </div>
+       </div>
+    </li>
     <?php //end - Magento CZ uprava ?>
 
 
-#### My Account > Address > Change Address
+#### Frontend > Můj Účet > Adresy > Změna adresy, Nová adresa
 
 V základní instalaci Magenta bude potřeba upravit jednu z šablon:
+
  - app/desing/frontend/rwd/default/template/customer/address/edit.phtml
  - app/desing/frontend/base/default/customer/address/edit.phtml
 
@@ -97,53 +99,53 @@ Do šablony je potřeba přidat nová políčka:
     </li>
     <?php //end - Magento CZ uprava ?>
 
-### Vypis adres
+### Nastavení v backendu Magenta
 
-System > Configuration > Customer Configuration > Address Templates
+V konfiguraci v sekci _System > Configuration > Customer Configuration > Address Templates_ (_Systém > Nastavení > Nastavení zákazníka > Šablony adres_)
 
 #### Text sekce
 
-Retezec 
+Řetězec 
 
-  {{depend vat_id}}VAT: {{var vat_id}}{{/depend}}
+    {{depend vat_id}}VAT: {{var vat_id}}{{/depend}}
 
 nahradit
 
-  {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
-  {{if magentocz_dic}}DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}VAT: {{var vat_id}}{{/depend}}{{/if}}
+    {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
+    {{if magentocz_dic}}DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}VAT: {{var vat_id}}{{/depend}}{{/if}}
 
 #### Text One Line
 
-Pokud chcete vypsat ICO a nebo DIC pak lze retezec obohatit o casti
+Pokud chcete vypsat IČO a nebo DIČ pak lze retezec obohatit o části
 
-  {{depend magentocz_ico}}, IČO: {{var magentocz_ico}}{{/depend}}{{depend magentocz_dic}}, DIČ: {{var magentocz_ico}}{{/depend}}
+    {{depend magentocz_ico}}, IČO: {{var magentocz_ico}}{{/depend}}{{depend magentocz_dic}}, DIČ: {{var magentocz_ico}}{{/depend}}
 
 
 #### HTML sekce
 
-Retezec
+Řetězec
   
   {{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}
 
 nahradit
 
-  {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
-  {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}
+      {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
+      {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}
 
 #### PDF sekce
 
-Retezec
+Řetězec
   
-  {{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}|
+    {{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}|
 
 nahradit
 
-  {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}|
-  {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}|
+      {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}|
+      {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}|
 
 #### JavaScript Template
 
-Retezec
+Řetězec
 
   <br/>VAT: #{vat_id}
 
@@ -158,3 +160,20 @@ nahradit
 # LICENCE
 
     Open Software License (OSL 3.0)
+
+    /** 
+    * Magento CZ Module
+    * 
+    * NOTICE OF LICENSE 
+    * 
+    * This source file is subject to the Open Software License (OSL 3.0) 
+    * that is bundled with this package in the file LICENSE.txt. 
+    * It is also available through the world-wide-web at this URL: 
+    * http://opensource.org/licenses/osl-3.0.php 
+    * If you did of the license and are unable to 
+    * obtain it through the world-wide-web, please send an email 
+    * to magentocz@gmail.com so we can send you a copy immediately. 
+    * 
+    * @copyright Copyright (c) 2014 Magento CZ (http://www.magento.cz)
+    *
+    */
