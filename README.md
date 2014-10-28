@@ -7,12 +7,12 @@ Pro správnou fakturaci, která je nezbytnou součástí internetového obchodov
 
 ## Seznam funkcí
 
-### Backend > Customers > Manage Customer
+### Backend > Zákazníci > Správa zákazníků
 
  - lze editovat IČO a DIČ na úrovni adresy
  - lze přidat novou adresu s IČO a DIČ
 
-### Backend > Sales > Orders
+### Backend > Prodeje > Objednávky
 
  - lze vytvořit novou objednávku a ve fakturační adrese lze vyplnit IČO a DIČ
  - v zobrazení existující objednávky je zobrazeno IČO a DIČ pokud byla čísla zadána
@@ -125,12 +125,12 @@ Pokud chcete vypsat IČO a nebo DIČ pak lze retezec obohatit o části
 
 Řetězec
   
-  {{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}
+    {{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}
 
 nahradit
 
-      {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
-      {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}
+    {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
+    {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}
 
 #### PDF sekce
 
@@ -140,18 +140,18 @@ nahradit
 
 nahradit
 
-      {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}|
-      {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}|
+    {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}|
+    {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}|
 
 #### JavaScript Template
 
 Řetězec
 
-  <br/>VAT: #{vat_id}
+    <br/>VAT: #{vat_id}
 
 nahradit
 
-  <br />IČO: #{var magentocz_ico}, <br />DIČ: #{var magentocz_dic}
+    <br />IČO: #{var magentocz_ico}, <br />DIČ: #{var magentocz_dic}
 
 ## Testováno na
 
