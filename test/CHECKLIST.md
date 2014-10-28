@@ -1,26 +1,24 @@
-Magento modul ICO
-====================
+# Test Checklist
 
-Magento modul řeší IČ zákazníka.
+## 1. Oveřit přítomnost atributu
+ 
+ - magentocz_ico
+ - magentocz_dic
 
-Pro správnou fakturaci, která je nezbytnou součástí internetového obchodování, je třeba do adresy zákazníka zanést IČ a DIČ. 
+## 2. Oveřit zařazení atributů do formulářů
 
-Základní instalace Magento má k dispozici pouze 'Tax/VAT number' atribut. Tento modul dodáva překlad na 'DIČ'.
-
-Modul IČ a DIČ:
-
- - přidává možnost vyplnění IČ a DIČ v adrese zákazníka umožňuje korektní fakturace
- - řeší zanesení IČ a DIČ pro OnePage Checkout
-
-## Nastavení a použití modulu
-
-Po instalaci se v v backeend modul projeví tak, že profil zákazníka v _Zákazníci → Správa zákazníků → → Adresy → Přidat novou adresu/Upravit zákaznické adresy_ obsahuje navíc položku Ič a Dič.
-
-Pro nastavení ve frontendu je nutná změna šablon. Položky IČ a DIČ se objeví v profilu zákazníka a taktéž budou zobrazeny při zadávání adresy při procesu dokončení objednávky - jsou tedy dostupné i v případě povolení nákupu pro nepřihlášené zákazníky.
-
-## Nastavení pouze pro Magento 1.4.2 a vyšší
-
-Pro správné zobrazování IČ a DIČ ve frontendu je dále potřeba upravit šablony v _System -> Configuration -> Customer Configuration -> Address Templates_. 
+ - adminhtml_customer_address
+ -- Customer > Manage Customers > Add new customer > Addresses > Add new address
+ --- políčko IČO je přítomné
+ --- políčko DIČ je přítomné
+ - customer_address_edit
+ -- Customer > Manage Customers > Edit customer > Addresses > Edit adresy
+ --- políčko IČO je přítomné
+ --- políčko DIČ je přítomné
+ -- Customer > Manage Customers > Edit customer > Addresses > Add new address
+ --- políčko IČO je přítomné
+ --- políčko DIČ je přítomné
+ - customer_register_address
 
 ## 3. Upravit frontend šablony
 
@@ -82,7 +80,3 @@ nahradit
 
   {{depend magentocz_ico}}<br />IČO: {{var magentocz_ico}}{{/depend}}
   {{if magentocz_dic}}<br />DIČ: {{var magentocz_dic}}{{else}}{{depend vat_id}}<br/>VAT: {{var vat_id}}{{/depend}}{{/if}}
-
-## LICENSE
-
-    Open Software License (OSL 3.0) 
