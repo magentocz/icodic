@@ -180,7 +180,7 @@ Veškeré dotazy a hlášení chyb směřujte na https://github.com/magentocz/ic
     * obtain it through the world-wide-web, please send an email 
     * to magentocz@gmail.com so we can send you a copy immediately. 
     * 
-    * @copyright Copyright (c) 2014 Magento CZ (http://www.magento.cz)
+    * @copyright Copyright (c) 2014 GetReady s.r.o. (https://getready.cz)
     *
     */
 
